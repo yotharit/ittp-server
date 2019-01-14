@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="sample" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0467b1d0-059e-451c-90f5-d02486333eb4">
+	<parameter name="barcode" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="name" class="java.lang.String" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="55" splitType="Stretch">
+			<image>
+				<reportElement x="-10" y="0" width="299" height="50" uuid="163e7399-f50b-4bc0-9260-5fbc696d802f"/>
+				<imageExpression><![CDATA["/Users/tharitpongsaneh/ittp-server/src/main/resources/header.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="60" width="50" height="20" uuid="dafe2b2d-f7f6-4226-97d3-16afe390768c"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[Customer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="10" width="330" height="30" uuid="1d13acc9-bcd0-4644-8874-6abafc3c6914"/>
+				<textElement>
+					<font fontName="SansSerif" size="14"/>
+				</textElement>
+				<text><![CDATA[Sample Report]]></text>
+			</staticText>
+			<textField pattern="M/d/yy">
+				<reportElement x="39" y="40" width="140" height="20" uuid="d49ce189-f4db-45eb-8858-0225ef58f2cd"/>
+				<textElement>
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="60" y="60" width="257" height="20" uuid="d91cc30d-0cdd-4698-a655-493f0ac98b25"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="11" y="40" width="28" height="20" uuid="3ce65152-9c3a-401b-b86b-db3223a66723"/>
+				<textElement>
+					<font fontName="SansSerif" size="9"/>
+				</textElement>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="425" y="60" width="80" height="20" uuid="70e2554c-4518-44cf-b2e4-029190e87b63"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="SansSerif" size="10"/>
+				</textElement>
+				<text><![CDATA[PAYMENT]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="393" y="20" width="145" height="40" uuid="e8b7cd25-4951-426c-b8a6-d11adf68e410"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128" drawText="false" checksumRequired="false" barWidth="10" barHeight="200">
+					<jr:codeExpression><![CDATA["1234"]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<rectangle>
+				<reportElement x="2" y="90" width="551" height="1" backcolor="#000000" uuid="47ad3862-c1e1-4573-80e1-87777d501131"/>
+			</rectangle>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="137" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="58" splitType="Stretch">
+			<rectangle>
+				<reportElement x="2" y="10" width="551" height="1" backcolor="#000000" uuid="8ee46016-b7b1-4e6b-ae21-81ca819ea810"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="230" y="11" width="323" height="30" uuid="71b64b9c-a1a2-4472-849f-94a9dae5dd91"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom">
+					<font fontName="SansSerif" size="14"/>
+				</textElement>
+				<text><![CDATA[Pages]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="453" y="45" width="100" height="13" uuid="a4acf0b4-e844-4330-8b9e-1c79f566dd79"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="43" splitType="Stretch"/>
+	</summary>
+</jasperReport>
