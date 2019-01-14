@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class PdfGenController {
 
-    @RequestMapping("/pdf/gen")
+    @RequestMapping("/ncb/pdf")
     public ResponseEntity<byte[]> index() throws JRException {
         GeneratePdf util = GeneratePdf.getInstance();
         String sampleJrxml = "";
         byte[] out = null;
         String fileName = "report.pdf";
-        sampleJrxml = "/Users/tharitpongsaneh/ittp-server/template/sample.jrxml";
-        out = util.generateMockPdf(sampleJrxml);
+        sampleJrxml = "/Users/tharitpongsaneh/ittp-server/template/NCB.jrxml";
+        out = util.generateNcbMockPdf(sampleJrxml);
         return ResponseEntity
                 .ok()
                 // Specify content type as PDF

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="NCB" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="af0564dc-f51c-4ab7-b525-0b0176708c52">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="ITTP" fontName="Kanit"/>
+	<parameter name="Date" class="java.lang.String" isForPrompting="false"/>
+	<parameter name="Month" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["ไม่ระบุ"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Year" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["0"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="Name" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["ไม่ระบุ"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="AddressFirst" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["ไม่ระบุ"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="AddressSecond" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["ไม่ระบุ"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="54" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="150" height="50" uuid="cdbc6efd-38df-40ea-89e3-c9b8a724d7b5"/>
+				<imageExpression><![CDATA["/Users/tharitpongsaneh/ittp-server/asset/header.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement style="ITTP" x="341" y="12" width="210" height="30" uuid="36e9acff-befb-4e12-85d8-5236ed00f8e5"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Kanit" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA["วันที่ " + $P{Date} + " " + $P{Month} + " " + $P{Year}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement style="ITTP" x="0" y="10" width="60" height="20" uuid="7fbcf25b-d64c-46e9-9f9b-c7e597098357"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Kanit" size="11"/>
+				</textElement>
+				<text><![CDATA[เรียน]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="ITTP" x="60" y="10" width="220" height="20" uuid="5ad98fab-f720-4d00-83f1-4f6862e48757"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Kanit"/>
+				</textElement>
+				<textFieldExpression><![CDATA["คุณ " + $P{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="ITTP" x="60" y="30" width="320" height="20" uuid="4a4923ea-a0e6-472b-9261-f1eb920877d2"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Kanit"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{AddressFirst}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="ITTP" x="60" y="50" width="320" height="20" uuid="fbe1c7a9-f18d-44c6-bd03-97360fb94881"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Kanit"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{AddressSecond}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="247" splitType="Stretch">
+			<textField>
+				<reportElement style="ITTP" x="2" y="0" width="550" height="170" uuid="d13ba94a-2eef-491b-b42b-6589aa93d32d"/>
+				<textElement textAlignment="Left">
+					<font fontName="Kanit"/>
+				</textElement>
+				<textFieldExpression><![CDATA["\tตามที่ท่านได้ขอสินเชื่อ กับ บริษัท ไอทีทีพี จำกัด นั้น เนื่องจากตามพระราชบัญญัติการประกอบธุรกิจข้อมูลเครดิต พ.ศ. 2545 และที่แก้ไขเพิ่มเติม และประกาศของคณะกรรมการคุ้มครองข้อมูลเครดิต กำหนดให้ บริษัท ไอทีทีพี จำกัด  มีหน้าที่ต้องส่งข้อมูลเครดิตของท่านให้แก่ บริษัทข้อมูลเครดิตที่ บริษัท ไอทีทีพี จำกัด เป็นสมาชิกอยู่ และแจ้งให้ทราบเกี่ยวกับข้อมูลเครดิตที่ส่งไปดังกล่าว ดังนั้นเพื่อดำเนินการให้เป็นไปตามบทบัญญัติของพระราชบัญญัติ ตลอดจนประกาศของคณะกรรมการคุ้มครองข้อมูลเครดิต ข้างต้น บริษัท ไอทีทีพี จำกัด จึงขอแจ้งให้ท่านทราบว่า ในรอบเดือนที่ผ่านมา  บริษัท ไอทีทีพี จำกัด ได้ส่งข้อมูลเครดิตของท่าน งวดข้อมูล วันที่ " + $P{Date} +" " + $P{Month} +" " + $P{Year} + " ให้แก่ บริษัท ข้อมูลเครดิตแห่งชาติ จำกัดแล้ว โดยข้อมูลเครดิตที่ บริษัท ไอทีทีพี จำกัด ส่งไปดังกล่าว  มีรายละเอียดปรากฏท้ายหนังสือนี้" + "\n" +"\tทั้งนี้ ข้อมูลเครดิตที่ บริษัท ไอทีทีพี จำกัด นำส่งให้แก่ บริษัทข้อมูลเครดิตดังกล่าว แสดงประวัติการชำระสินเชื่อ ที่ท่านมีกับ บริษัท ไอทีทีพี จำกัด เพียงสถานะล่าสุดในขณะที่ บริษัท ไอทีทีพี จำกัด จัดทำข้อมูลเพื่อนำส่งข้อมูลเครดิตแก่ บริษัทข้อมูลเครดิตดังกล่าวเท่านั้น   ซึ่งข้อมูลเครดิตดังกล่าวอาจแตกต่างจากข้อมูลที่ บริษัท ไอทีทีพี จำกัด  มีอยู่ในขณะนี้" + "\n\tจึงเรียนมาเพื่อโปรดทราบ"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="ITTP" x="380" y="170" width="110" height="34" uuid="17bd7513-919d-4e52-95a4-5de47db702ab"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Kanit"/>
+				</textElement>
+				<text><![CDATA[ขอแสดงความนับถือ
+บริษัท ไอทีทีพี จำกัด]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="2" y="204" width="508" height="34" uuid="d446c1d0-1b29-4696-9f6c-9a87592e1783"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Kanit"/>
+				</textElement>
+				<text><![CDATA[* กรณีพบว่าข้อมูลใดไม่ถูกต้อง โปรดรีบติดต่อได้ที่ คุณวรัญญา ทับสีสา   โทร 02-539-5594 ต่อ 5101,5102
+บริษัท ไอทีทีพี จำกัด 183 ซอยลาดพร้าว 71 แขวงสะพานสอง เขตวังทองหลาง กรุงเทพมหานคร 10310]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
