@@ -2,7 +2,6 @@ package com.ittp.ittpserver.jasper.generate;
 
 import net.sf.jasperreports.engine.*;
 
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 

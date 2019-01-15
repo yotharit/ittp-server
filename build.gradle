@@ -45,4 +45,5 @@ dependencies {
 	compile group: 'com.lowagie', name: 'itext', version: '2.1.7'
 	compile group: 'net.sourceforge.barbecue', name: 'barbecue', version: '1.5-beta1'
 	testCompile group: 'com.itextpdf', name: 'itext-pdfa', version: '5.5.13'
+
 }
