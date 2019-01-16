@@ -1,0 +1,1168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CheckList" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="752" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="66455bcb-540d-4c20-a59e-ae0948d7281f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="net.sf.jasperreports.export.pdf.glyph.renderer.blocks.x" value="thai"/>
+	<style name="ITTP" fontName="Kanit"/>
+	<parameter name="Id" class="java.lang.String"/>
+	<parameter name="Name" class="java.lang.String"/>
+	<parameter name="Type" class="java.lang.String"/>
+	<parameter name="OpenDate" class="java.lang.String"/>
+	<parameter name="OpenMonth" class="java.lang.String"/>
+	<parameter name="OpenYear" class="java.lang.String"/>
+	<parameter name="CloseDate" class="java.lang.String"/>
+	<parameter name="CloseMonth" class="java.lang.String"/>
+	<parameter name="CloseYear" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="60" splitType="Stretch">
+			<image>
+				<reportElement x="30" y="2" width="134" height="50" uuid="75da193e-38d3-48d9-b6f8-41c3738abdd8"/>
+				<imageExpression><![CDATA["/Users/tharitpongsaneh/ittp-server/asset/check_header.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="ITTP" x="170" y="19" width="141" height="11" uuid="7cc2e7bf-8b5b-44b2-9baf-f6fabe446023"/>
+				<textElement verticalAlignment="Middle">
+					<font size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[บริษัท ไอทีทีพี จำกัด]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="170" y="30" width="210" height="22" uuid="fb1d31d2-3590-4a72-9d94-125b43b1957a"/>
+				<textElement verticalAlignment="Top">
+					<font size="7" isBold="false"/>
+				</textElement>
+				<text><![CDATA[183 ซอยลาดพร้าว 71 แขวงสะพานสอง เขตวังทองหลาง กทม.10310
+เลขที่ผู้เสียภาษีอากร / ทะเบียนเลขที่ 0105554146049]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement style="ITTP" x="186" y="6" width="380" height="24" uuid="676bd9fd-a38a-4c2b-8dbf-e42386327a0b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[ทะเบียนตรวจเช็คเอกสารตามข้อกำหนด]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="63" splitType="Stretch">
+			<textField>
+				<reportElement style="ITTP" x="30" y="5" width="270" height="15" uuid="85177150-92ba-41aa-ac92-c2272a84ef73"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["เลขที่สัญญา: " + $P{Id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="ITTP" x="30" y="23" width="270" height="15" uuid="8608e21e-57da-4945-abfc-e5e2304fe63a"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["ชื่อ: " + $P{Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="ITTP" x="30" y="42" width="270" height="15" uuid="88500c3f-5f4c-4172-9656-e17950a87498"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["ประเภทสินเชื่อ: " + $P{Type}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="ITTP" x="306" y="5" width="270" height="15" uuid="d08c4cc3-b4c2-4ff3-b4d9-b76751081a93"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["วันที่เปิดสัญญา: " + $P{OpenYear} + "-"+ $P{OpenMonth}+"-"+$P{OpenDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="ITTP" x="306" y="23" width="270" height="15" uuid="a706a3b1-3605-43d8-a158-c8ab45e3bf9f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA["วันที่ปิดสัญญา: " + $P{CloseYear}+"-"+$P{CloseMonth}+"-"+$P{CloseDate}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="374" splitType="Stretch">
+			<staticText>
+				<reportElement style="ITTP" x="30" y="1" width="30" height="63" uuid="1588df57-cc71-4552-9953-04c00fdae68b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[#]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="60" y="1" width="170" height="63" uuid="1b74ded5-f003-4abb-9368-7997b5b807ea"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[เอกสาร]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="230" y="1" width="492" height="22" uuid="1729cbb9-7e5a-4e28-936c-8f5cfb379ca5"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ตรวจสอบความถูกต้อง]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="230" y="23" width="164" height="20" uuid="1d023e76-7cb0-4f2d-84ac-a37714a57ccc"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[เอกสารต้นฉบับ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="230" y="44" width="82" height="20" uuid="4c1b6c98-a192-4a82-970c-8eed6b112c50"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="312" y="44" width="82" height="20" uuid="816937fb-30cc-45c0-9ff2-15039be83da4"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUDIT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="395" y="23" width="164" height="20" uuid="2842694a-a3c7-46f0-8bf1-705e36f11c16"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[File Scan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="394" y="44" width="82" height="20" uuid="4dea524a-8dd6-4459-a398-831c134996ef"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="476" y="44" width="82" height="20" uuid="269027b7-a0a6-41c0-b439-fd326ed50da5"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUDIT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="558" y="23" width="164" height="20" uuid="aeb5f82d-9013-44e1-abc5-52ef8320da6a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ระบบ Core Loan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="558" y="44" width="82" height="20" uuid="e309bf57-d7a7-46de-855b-9c5ac601b763"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[NA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="640" y="44" width="82" height="20" uuid="424e3d8e-5db6-4c20-b5e9-e59ea06dba5e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AUDIT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="30" y="65" width="30" height="20" uuid="9847383f-96f7-463f-b36f-9d3fd7f08103"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="60" y="65" width="170" height="20" uuid="6299dc7d-cb07-44a3-b2a4-8acd4d5ee31f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[  หนังสืออนุมัติวงเงินสินเชื่อ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="230" y="65" width="82" height="20" uuid="58b0b4fa-b9a8-4de5-ac1f-0fa00cc715b8"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="312" y="65" width="82" height="20" uuid="037886b8-bf59-469b-977a-fa1b99a664b1"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="394" y="65" width="82" height="20" uuid="7c0fa593-def5-4e4d-bfce-3c2ace3b18d0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="476" y="65" width="82" height="20" uuid="c3381fb2-b03d-481f-bb9e-5f0483557a67"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="558" y="65" width="82" height="20" uuid="2e8332c1-8043-496e-a86e-b4a0ac0708af"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="640" y="65" width="82" height="20" uuid="21c5aca8-f4ac-4c88-9a96-69b5c616a73c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="30" y="85" width="30" height="20" uuid="1544e9c5-4596-49d8-bfff-8865e31a9383"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="60" y="85" width="170" height="20" uuid="d91187e5-da78-44cc-b8db-6f1c81eacfde"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[  ใบสมัคร]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="230" y="85" width="82" height="20" uuid="436d0741-54ed-4ecd-a348-0fb34b4df703"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="312" y="85" width="82" height="20" uuid="84141e4a-d86c-4d30-99ba-e2f5fc717b75"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="394" y="85" width="82" height="20" uuid="c90a76a5-bbbd-41cd-be40-b476e76cab2b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="476" y="85" width="82" height="20" uuid="daeebd9d-733d-4a9a-88f8-a51e1fa3b50e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="558" y="85" width="82" height="20" uuid="372325c6-a63f-4f4d-8c87-0d7dc99b636c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="640" y="85" width="82" height="20" uuid="d4f57a90-22e8-4c32-95a3-b9ee9b4a458a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="30" y="105" width="30" height="20" uuid="33478a1f-44c5-4ead-b424-47935862cc63"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[3]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="60" y="105" width="170" height="20" uuid="3f8d91ba-e73e-4b68-b43f-0356cd644a84"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[  Consent]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="230" y="105" width="82" height="20" uuid="c1d78849-6ed3-43bf-9985-26bc5c6d2692"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="312" y="105" width="82" height="20" uuid="72cf1bc9-e855-4e5a-ab48-0a12cff3dc8f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="394" y="105" width="82" height="20" uuid="d590deee-5f98-4b70-8f13-6dc64d585008"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="476" y="105" width="82" height="20" uuid="3d3f3659-d683-4c8a-a00f-e330aaa7448d"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="558" y="105" width="82" height="20" uuid="3b4119ed-226b-4d19-b26a-9b86c86a4ae3"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="640" y="105" width="82" height="20" uuid="0493eec3-c996-46a1-8ba4-b01a5a602982"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="30" y="125" width="30" height="20" uuid="82c536a5-ff1d-403b-adf0-c3ee0f3ee3d0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="60" y="125" width="170" height="20" uuid="fad181f5-22ca-42dc-b26c-dc0a6d34612b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[  สำเนาบัตรประชาชน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="230" y="125" width="82" height="20" uuid="16f5ea26-b666-42f8-85c5-298c0223e260"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="312" y="125" width="82" height="20" uuid="8fe765ea-f563-4477-84f6-543e78511f69"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="394" y="125" width="82" height="20" uuid="5e40c49c-b994-4a54-aa0e-0cd86d40ba5c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="476" y="125" width="82" height="20" uuid="d4044d8b-8f82-4be8-8524-a0a34d0ed2df"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="558" y="125" width="82" height="20" uuid="f46896cd-5d12-4a95-ba88-0fad257eec61"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="640" y="125" width="82" height="20" uuid="15c512e8-d6cf-49ee-87ff-d505c716aeaa"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="30" y="145" width="30" height="20" uuid="23044e0b-284c-444e-8ca0-76526fb9055f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[5]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="60" y="145" width="170" height="20" uuid="6ba04b9d-efdf-4267-b972-3ec1c1783661"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[  สำเนาทะเบียนบ้าน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="230" y="145" width="82" height="20" uuid="351b9dd9-4dec-42aa-9d82-8144a99f2b8f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="312" y="145" width="82" height="20" uuid="4ba31c94-4e31-4a3a-89f7-a557912590b7"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="394" y="145" width="82" height="20" uuid="d7ae6e6d-a26c-4c42-a0eb-4351b34b0f9e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="476" y="145" width="82" height="20" uuid="1a9e426e-2ebb-4eae-938d-8bdfb049f2e2"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="558" y="145" width="82" height="20" uuid="2c2c8289-44e6-4d7e-9b10-66ca92cc112a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="640" y="145" width="82" height="20" uuid="1595abf0-e826-473c-bbac-cb775936c0e6"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="30" y="165" width="30" height="20" uuid="36c15f52-391d-4922-8ea0-21f651fe7f82"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[6]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="60" y="165" width="170" height="20" uuid="4ea35c48-a935-4754-95a7-ff978e2a2997"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[  หนังสือรับรองเงินเดือน / สลิปเงินเดือน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="230" y="165" width="82" height="20" uuid="b71e1359-4e85-41bf-ab11-f4c1cda684df"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="312" y="165" width="82" height="20" uuid="213a6e76-c1e3-4d25-bb9d-6478b8445421"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="394" y="165" width="82" height="20" uuid="e97bbcc8-e40b-4afa-a4e8-66ec677fc435"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="476" y="165" width="82" height="20" uuid="4cebd817-8dd2-4501-b1b3-78529656478b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="558" y="165" width="82" height="20" uuid="b427339a-d005-4b20-9e09-2dc292f5d802"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="640" y="165" width="82" height="20" uuid="7d77bf9a-90b1-4cb9-93ba-d359af263d42"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="30" y="185" width="30" height="20" uuid="202e7c5f-3f8d-4f7d-94e1-ea5e623d379a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[7]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="60" y="185" width="170" height="20" uuid="dfd25bac-9f35-4231-854a-6a4f71e4caad"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[  หน้าสมุดบัญชีและรายการเดินบัญชี]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="230" y="185" width="82" height="20" uuid="a39bbcc4-a1bb-4422-b5c5-ffbffb5a4f34"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="312" y="185" width="82" height="20" uuid="b5ffb7b3-4a4d-4def-9723-a408e3b823ab"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="394" y="185" width="82" height="20" uuid="cfca17de-8a5f-4804-aa2a-a67d2bad47a1"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="476" y="185" width="82" height="20" uuid="ace0b95a-6f16-4036-a40d-829845c8b156"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="558" y="185" width="82" height="20" uuid="04798264-965b-45be-aa29-c67c222cc850"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="640" y="185" width="82" height="20" uuid="d5753644-9596-466e-a95b-7c795561ccb8"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="30" y="205" width="30" height="20" uuid="dbbd4c0c-431b-4a95-9629-42a6639adacf"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[8]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="60" y="205" width="170" height="20" uuid="bafedc33-4303-4b9a-b670-6d7f37c722bb"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[  หนังสือค้ำประกัน]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="230" y="205" width="82" height="20" uuid="80e06b24-a08d-4c22-837d-801d0fd2be1e"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="312" y="205" width="82" height="20" uuid="52c452cb-2cb7-49c8-8fc9-9a3a9ee15220"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="394" y="205" width="82" height="20" uuid="48efe0ed-215d-4ea3-bcb3-6267acee53d3"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="476" y="205" width="82" height="20" uuid="c984826c-2fdb-4a80-83b2-e3aa06968606"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="558" y="205" width="82" height="20" uuid="6be20e58-1b62-4b92-82f2-e8c5125614da"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="640" y="205" width="82" height="20" uuid="28b9d79f-73d2-4a8c-89f5-f28a4123cb0b"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="30" y="225" width="30" height="40" uuid="c3adeb5d-e120-4357-b3e0-62c2a695f383"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[9]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="60" y="225" width="170" height="40" uuid="b65e3250-abe8-48a1-aa19-e903d569ea96"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[  เอกสารผู้ค้ำประกัน 
+  (สำเนาบัตร ปชช., สลิปเงินเดือน, statement)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="230" y="225" width="82" height="40" uuid="67c4bb8d-68d4-4765-9513-70e6d61134a0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="312" y="225" width="82" height="40" uuid="ae4e4670-d22f-4934-9ba5-835bdcf19e6f"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="394" y="225" width="82" height="40" uuid="0f5d824e-5f09-4e1f-8098-650f00a0f16c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="476" y="225" width="82" height="40" uuid="ddb95a19-b167-406b-9055-2395dbb9528c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="558" y="225" width="82" height="40" uuid="b56fb36b-fc43-4727-968d-43604f29c73a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="640" y="225" width="82" height="40" uuid="0eecfa6a-b827-4ff9-a18f-f9d2a2678862"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="30" y="265" width="200" height="40" uuid="7cf46ee1-8250-4130-969a-28039c6964fc"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[  ลายเซ็นผู้ตรวจสอบ #1-9
+  วันที่
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="230" y="265" width="82" height="40" uuid="1dba8d5c-92bd-46fb-b67d-43e4d9582d12"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="312" y="265" width="82" height="40" uuid="93650155-572b-43ae-9ca3-b892a75f5d9c"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="394" y="265" width="82" height="40" uuid="4b9ec5b6-1409-47b1-ae3b-8e7c796b8017"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="476" y="265" width="82" height="40" uuid="ca4e8499-4aa1-4990-b495-0cf37154a230"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="558" y="265" width="82" height="40" uuid="fefa6268-9a9f-4e4d-b1d6-cecfa3329dd0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="640" y="265" width="82" height="40" uuid="4cb4487f-a151-4c1b-9908-672d8bcc5077"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="30" y="305" width="30" height="20" uuid="36ebd61f-b145-4ab0-a3a1-8569c30e30bd"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[10]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="60" y="305" width="170" height="20" uuid="c8f262e0-f244-4d31-b2d0-1d69df20da60"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[  อนุมัติตามข้อกำหนด ธปท.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="230" y="305" width="82" height="20" uuid="06b15921-17b0-4085-8649-df6a0ba7ae12"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="312" y="305" width="82" height="20" uuid="a12a2046-7fbb-4f94-9b4d-ba7847166f05"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="394" y="305" width="82" height="20" uuid="907e25a7-e0c0-469c-84b7-0125507e50d7"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="476" y="305" width="82" height="20" uuid="9de36ba8-4afd-44e1-810b-082a05ee4ad7"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="558" y="305" width="82" height="20" uuid="1c735c34-dc18-4344-9ba0-3dce6289c8af"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="640" y="305" width="82" height="20" uuid="8773f637-9b43-46ea-b519-9f0ac73d44d0"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="30" y="325" width="200" height="40" uuid="f4bddf70-fa0a-4601-b9a6-09e0cd3d5e88"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[  ลายเซ็นผู้ตรวจสอบ #10
+  วันที่
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="230" y="325" width="82" height="40" uuid="bdf97872-75d2-49be-b9df-b77624e05267"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="312" y="325" width="82" height="40" uuid="3ea198e6-5a39-4874-acc4-ffc903b5eb80"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="394" y="325" width="82" height="40" uuid="94c0eae5-3cfd-4b1b-b866-bbeb1e9dc728"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="476" y="325" width="82" height="40" uuid="1007c9a6-1989-40c7-ba4f-efd677491b64"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="558" y="325" width="82" height="40" uuid="2c9c8928-4abb-43ba-b42d-2cecffd9089a"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="640" y="325" width="82" height="40" uuid="83cf7ee7-52f6-48f4-ae0a-c0e52cb0d7ab"/>
+				<box>
+					<pen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="41" splitType="Stretch">
+			<staticText>
+				<reportElement style="ITTP" x="47" y="10" width="290" height="24" uuid="1388a077-0d73-45d0-95ce-d9b4756c794e"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ผู้ส่งเอกสาร  NA....................................................................วันที่...........................................]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="ITTP" x="394" y="10" width="320" height="24" uuid="9f03bc76-52cd-4276-a51d-ae53e793a31a"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ผู้รับเอกสาร  Collection....................................................................วันที่...........................................]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
